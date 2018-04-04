@@ -1,9 +1,6 @@
 
 # coding: utf-8
 
-# In[2]:
-
-
 from numpy import *                                #importing dataset and performing cross-validation
 from sklearn.datasets import load_iris
 iris=load_iris()
@@ -26,10 +23,6 @@ prob_setosa=setosa/130
 prob_versicolour=versicolour/130
 prob_virginica=virginica/130  
 from math import pi
-
-
-# In[3]:
-
 
 def calc_mean(cls,target_training_array,feature):           #function calculating mean of a given feature in a particular class
     if(cls==0):
@@ -84,28 +77,9 @@ def model(training_array):                     #returning the class with the lar
             return(i)        
 
 
-# In[4]:
-
-
 prediction=zeros(len(y_test))
 for i in range(len(y_test)):
     prediction[i]=model(x_test[i])
-
-
-# In[5]:
-
-
-print(y_test)
-
-
-# In[5]:
-
-
-print(prediction)
-
-
-# In[6]:
-
 
 print("ACCURACY=",mean(y_test==prediction))
 
